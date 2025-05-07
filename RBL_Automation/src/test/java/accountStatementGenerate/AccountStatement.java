@@ -21,6 +21,7 @@ public class AccountStatement extends BaseClass {
 	private String payoutFileName;
 	private String collectFileName;
 	private String timeToDownloadStmt = "06:00";
+	private long statmentCheckWatingTime = 3l;
 	
 	@Test
 	public void downloadCollect_PayoutStmt() throws Throwable {
@@ -234,7 +235,7 @@ public class AccountStatement extends BaseClass {
 		lp.getlogoutConfirmationBtn().click();
 		lp.getGoToLoginPageBtn().click();
 
-		TimeUnit.MINUTES.sleep(5);
+		TimeUnit.MINUTES.sleep(statmentCheckWatingTime);
 
 		// Post Script to Validate the Statement got downloaded or not
 		lp.getUserIdEdt().sendKeys(USERID);
@@ -254,6 +255,8 @@ public class AccountStatement extends BaseClass {
 		lp.getdownloadCenterOption().click();
 		Thread.sleep(2000);
 
+		boolean collectFlag = false;
+		boolean payoutFlag = false;
 		for (int stmtsIndex = 0; stmtsIndex < lp.getStatementList().size(); stmtsIndex++) {
 			List<WebElement> statement = lp.getStatementList().get(stmtsIndex).findElement(By.tagName("tr"))
 					.findElements(By.tagName("td"));
@@ -271,12 +274,14 @@ public class AccountStatement extends BaseClass {
 								.click();
 
 						collectFileName = "MYGRU0317.ANURAGSH_409002366181_" + statment_num + ".csv";
+						collectFlag=true;
 					}
 					if (fileName.contains(fileFromDate) && fileName.contains(fileToDate)
 							&& fileName.contains(payoutAccountNo)) {
 						statement.get(statementIndex).findElement(By.tagName("span")).findElement(By.tagName("a"))
 								.click();
 						payoutFileName = "MYGRU0317.ANURAGSH_409002362954_" + statment_num + ".csv";
+						payoutFlag=true;
 					}
 
 				}
@@ -288,12 +293,14 @@ public class AccountStatement extends BaseClass {
 		lp.getlogoutConfirmationBtn().click();
 		lp.getGoToLoginPageBtn().click();
 
-        System.out.println("Downloaded Stement for "+stmtFetchDate+", Below are the file details");
-		System.out.println("Collect File Name --> "+collectFileName);
-		System.out.println("Payout File Name --> "+payoutFileName);
-		System.out.println("--------------------------------------------------------------");
-		String nextStmtDownloadDate = LocalDate.parse(stmtFetchDate, dateFormatter).plusDays(1).format(dateFormatter);
-		fLib.writeToProperties("stmtDownloaded",nextStmtDownloadDate );
+		if(collectFlag&&payoutFlag) {
+			System.out.println("Downloaded Stement for "+stmtFetchDate+", Below are the file details");
+			System.out.println("Collect File Name --> "+collectFileName);
+			System.out.println("Payout File Name --> "+payoutFileName);
+			System.out.println("--------------------------------------------------------------");
+			String nextStmtDownloadDate = LocalDate.parse(stmtFetchDate, dateFormatter).plusDays(1).format(dateFormatter);
+			fLib.writeToProperties("stmtDownloaded",nextStmtDownloadDate );			
+		}
 	}
 
 
