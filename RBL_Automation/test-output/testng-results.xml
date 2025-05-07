@@ -2,38 +2,38 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-06T12:29:28Z" name="Default suite" finished-at="2025-05-06T12:29:43Z" duration-ms="15321">
+  <suite started-at="2025-05-07T05:45:51Z" name="Default suite" finished-at="2025-05-07T05:56:56Z" duration-ms="665451">
     <groups>
     </groups>
-    <test started-at="2025-05-06T12:29:28Z" name="Default test" finished-at="2025-05-06T12:29:43Z" duration-ms="15321">
+    <test started-at="2025-05-07T05:45:51Z" name="Default test" finished-at="2025-05-07T05:56:56Z" duration-ms="665451">
       <class name="accountStatementGenerate.AccountStatement">
-        <test-method is-config="true" signature="configBC()[pri:0, instance:accountStatementGenerate.AccountStatement@29f7cefd]" started-at="2025-05-06T12:29:28Z" name="configBC" finished-at="2025-05-06T12:29:34Z" duration-ms="5822" status="PASS">
+        <test-method is-config="true" signature="configBC()[pri:0, instance:accountStatementGenerate.AccountStatement@29f7cefd]" started-at="2025-05-07T05:45:51Z" name="configBC" finished-at="2025-05-07T05:45:58Z" duration-ms="7173" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBC -->
-        <test-method signature="downloadCollect_PayoutStmt()[pri:0, instance:accountStatementGenerate.AccountStatement@29f7cefd]" started-at="2025-05-06T12:29:34Z" name="downloadCollect_PayoutStmt" finished-at="2025-05-06T12:29:43Z" duration-ms="9433" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="downloadCollect_PayoutStmt()[pri:0, instance:accountStatementGenerate.AccountStatement@29f7cefd]" started-at="2025-05-07T05:45:58Z" name="downloadCollect_PayoutStmt" finished-at="2025-05-07T05:56:56Z" duration-ms="658216" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element click intercepted: Element <a href="https://online.rblbank.com/CorpBank" id="header-login-cb" target="_blank" aria-label="Corporate Banking" aria-describedby="Corporate Banking">...</a> is not clickable at point (112, 20). Other element would receive the click: <div class="col-12">...</div>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#span_LOG_OUT"}
   (Session info: chrome=135.0.7049.115)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c832b24943a8da027d7879c60e0c855b, clickElement {id=f.27F7E67FAD34E85FD3F556C2A606693E.d.490317A5D7D9F3A1A4EA98A38AFE6905.e.135}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56821}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56821/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (c832b24943a8da027d7879c60e0c855b)] -> xpath: //a[@id='header-login-cb' and @aria-label='Corporate Banking']]
-Session ID: c832b24943a8da027d7879c60e0c855b]]>
+Command: [2abb8969d7078d47951738e9fb9cdaa9, findElement {using=id, value=span_LOG_OUT}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59754}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59754/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2abb8969d7078d47951738e9fb9cdaa9]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="https://online.rblbank.com/CorpBank" id="header-login-cb" target="_blank" aria-label="Corporate Banking" aria-describedby="Corporate Banking">...</a> is not clickable at point (112, 20). Other element would receive the click: <div class="col-12">...</div>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#span_LOG_OUT"}
   (Session info: chrome=135.0.7049.115)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c832b24943a8da027d7879c60e0c855b, clickElement {id=f.27F7E67FAD34E85FD3F556C2A606693E.d.490317A5D7D9F3A1A4EA98A38AFE6905.e.135}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56821}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56821/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (c832b24943a8da027d7879c60e0c855b)] -> xpath: //a[@id='header-login-cb' and @aria-label='Corporate Banking']]
-Session ID: c832b24943a8da027d7879c60e0c855b
+Command: [2abb8969d7078d47951738e9fb9cdaa9, findElement {using=id, value=span_LOG_OUT}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59754}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59754/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2abb8969d7078d47951738e9fb9cdaa9
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -46,15 +46,15 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
 at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at accountStatementGenerate.AccountStatement.downloadCollect_PayoutStmt(AccountStatement.java:36)
+at accountStatementGenerate.AccountStatement.GenerateAccountStatement(AccountStatement.java:293)
+at accountStatementGenerate.AccountStatement.downloadCollect_PayoutStmt(AccountStatement.java:70)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -82,7 +82,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- downloadCollect_PayoutStmt -->

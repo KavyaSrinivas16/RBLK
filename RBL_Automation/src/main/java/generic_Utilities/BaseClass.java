@@ -37,32 +37,39 @@ public class BaseClass {
 	@BeforeClass()
 	public void configBC() throws Throwable {
 
-		System.out.println("==Launch the BROWSER==");
+		try {
 
-		// String BROWSER = fLib.getDataFromPropertiesFile("browser");
-		String BROWSER = System.getProperty("browser", fLib.getDataFromPropertiesFile("browser"));
-		if (BROWSER.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions chromeOptions = new ChromeOptions();
-			driver = new ChromeDriver(chromeOptions);
-		} else if (BROWSER.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions firefoxOption = new FirefoxOptions();
-			driver = new FirefoxDriver(firefoxOption);
-		} else if (BROWSER.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
-			EdgeOptions edgeOption = new EdgeOptions();
-			driver = new EdgeDriver(edgeOption);
-		} else {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions chromeOptions = new ChromeOptions();
-			driver = new ChromeDriver(chromeOptions);
+			System.out.println("==Launch the BROWSER==");
+
+			// String BROWSER = fLib.getDataFromPropertiesFile("browser");
+			String BROWSER = System.getProperty("browser", fLib.getDataFromPropertiesFile("browser"));
+			if (BROWSER.equals("chrome")) {
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				driver = new ChromeDriver(chromeOptions);
+			} else if (BROWSER.equals("firefox")) {
+				WebDriverManager.firefoxdriver().setup();
+				FirefoxOptions firefoxOption = new FirefoxOptions();
+				driver = new FirefoxDriver(firefoxOption);
+			} else if (BROWSER.equals("edge")) {
+				WebDriverManager.edgedriver().setup();
+				EdgeOptions edgeOption = new EdgeOptions();
+				driver = new EdgeDriver(edgeOption);
+			} else {
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				driver = new ChromeDriver(chromeOptions);
+			}
+			sdriver = driver;
+			UtilityClassObject.setDriver(driver);
+		} catch (Exception e) {
+			driver.quit();
+
+			BaseClass baseclass = new BaseClass();
+			baseclass.configBC();
 		}
-		sdriver = driver;
-		UtilityClassObject.setDriver(driver);
 	}
-	
-	
+
 //
 //	@AfterClass()
 //	public void configAC() {
